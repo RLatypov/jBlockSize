@@ -1,6 +1,5 @@
 (function( $ ){
 	$.fn.jBlockSize = function( options ) {
-
 		var s = $.extend({
 			type                : 'max',    //string : min,max
 			side                : 'h',      //string : w,h,wh
@@ -30,7 +29,7 @@
 				items = itemsParent.children(),
 				itemsCount = items.length,
 				item = $(items[0]),
-				countInString = Math.floor(itemsParent.width() / item.width());
+				countInString = Math.floor(itemsParent.width() / item.outerWidth());
 
 			items.filter(function(index) {
 				if(index % countInString == 0) {
@@ -46,14 +45,11 @@
 		};
 
 		return this.each(function() {
-			if(s.side == 'h') {
-				if(s.responsive) {
-					responsive(this);
-				} else {
-					setHeight(this);
-				}
+			if(s.responsive) {
+				responsive(this);
+			} else {
+				setHeight(this);
 			}
 		});
 	};
-
 })( jQuery );

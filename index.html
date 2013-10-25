@@ -6,20 +6,30 @@
 <body>
 
 <style type="text/css">
+	body {
+		font-family: 'Arial';
+	}
+
 	* {
 		margin: 0;
 		padding: 0;
 	}
 
 	.products-grid {
-		overflow: hidden;
+		width: 100%;
 		list-style: none;
 	}
 
 	.products-grid li {
 		width: 200px;
-		margin: 0 10px 20px;
+		padding: 0 20px;
+		margin: 0 0 20px;
 		float: left;
+	}
+
+	.products-grid li .product-name,
+	.products-grid li .product-price {
+		outline: 1px dashed cornflowerblue;
 	}
 </style>
 
@@ -28,21 +38,21 @@
 		<div class="product-image">
 			<img src="img/product.jpg" width="200" height="265" />
 		</div>
-		<h2 class="products-name">Lana Dress in Red Canvas Lana Dress in Red Canvas</h2>
+		<h2 class="product-name">Lana Dress in Red Canvas Lana Dress in Red Canvas</h2>
+		<div class="product-price">Product Price<br />100$Product Price<br />100$</div>
+	</li>
+	<li>
+		<div class="product-image">
+			<img src="img/product.jpg" width="200" height="265" />
+		</div>
+		<h2 class="product-name">Lana Dress in Red Canvas Lana Dress in Red Canvas Lana Dress in Red Canvas</h2>
 		<div class="product-price">100$</div>
 	</li>
 	<li>
 		<div class="product-image">
 			<img src="img/product.jpg" width="200" height="265" />
 		</div>
-		<h2 class="products-name">Lana Dress in Red Canvas Lana Dress in Red Canvas Lana Dress in Red Canvas</h2>
-		<div class="product-price">100$</div>
-	</li>
-	<li>
-		<div class="product-image">
-			<img src="img/product.jpg" width="200" height="265" />
-		</div>
-		<h2 class="products-name">Lana Dress in Red Canvas</h2>
+		<h2 class="product-name">Lana Dress in Red Canvas</h2>
 		<div class="product-price">Product Price<br />100$</div>
 	</li>
 </ul>
@@ -58,7 +68,7 @@
 		}
 
 		productsGrid.jBlockSize({
-			child      : '.products-name, .product-price',
+			child      : '.product-name, .product-price',
 			responsive : true
 		});
 	};
