@@ -45,11 +45,7 @@
 		};
 
 		return this.each(function() {
-			if(s.responsive) {
-				responsive(this);
-			} else {
-				setHeight(this);
-			}
+			s.responsive : responsive(this) ? setHeight(this);
 		});
 	};
 })( jQuery );
